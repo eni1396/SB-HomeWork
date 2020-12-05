@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         greenLabel.alpha = 0.3
     }
     
-    @IBAction func toggleButton() {
+    @IBAction func pressedButton() {
         changeButton.setTitle("Next", for: .normal)
         if isRed {
             isRed = false

@@ -66,7 +66,7 @@
                                 <color key="tintColor" red="0.1334075927734375" green="0.13329261541366577" blue="0.14286327362060547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <action selector="toggleButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="C1Y-6p-N30"/>
+                                    <action selector="pressedButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="C1Y-6p-N30"/>
                                 </connections>
                             </button>
                         </subviews>
