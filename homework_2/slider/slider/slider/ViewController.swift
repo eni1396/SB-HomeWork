@@ -21,33 +21,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        MARK: set min values of slider
-        sliderRed.minimumValue = 0
-        sliderBlue.minimumValue = 0
-        sliderGreen.minimumValue = 0
+        //        MARK: set start posotion for each slider
+        sliderRed.value = 0.0
+        sliderBlue.value = 0.0
+        sliderGreen.value = 0.0
         
-//        MARK: set max values of slider
-        sliderRed.maximumValue = 255
-        sliderBlue.maximumValue = 255
-        sliderGreen.maximumValue = 255
-
-//        MARK: left side of slider equals its color
+        //        MARK: left side of slider equals its color
         sliderRed.minimumTrackTintColor = .red
         sliderBlue.minimumTrackTintColor = .blue
         sliderGreen.minimumTrackTintColor = .green
         
-//        MARK: set views default colors
+        //        MARK: set views default colors
         self.view.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         myView.backgroundColor = #colorLiteral(red: 0.9969566082, green: 0.9105548078, blue: 1, alpha: 1)
         
-
-
+        sliderToggle()
     }
     
     @IBAction func sliderToggle() {
-        colorRed.text = String(Int(sliderRed.value))
-        colorBlue.text = String(Int(sliderBlue.value))
-        colorGreen.text = String(Int(sliderGreen.value))
+        colorRed.text = String(format: "%.2f", (sliderRed.value))
+        colorBlue.text = String(format: "%.2f", (sliderBlue.value))
+        colorGreen.text = String(format: "%.2f", (sliderGreen.value))
         
         let red = CGFloat(sliderRed.value)
         let blue = CGFloat(sliderBlue.value)
