@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenLabel: UILabel!
     @IBOutlet weak var changeButton: UIButton!
     
-//    состояние светофора
+    //    состояние светофора
     var isRed = true
     var isYellow = true
     var isGreen = true
