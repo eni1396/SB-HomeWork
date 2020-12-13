@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        MARK: set start posotion for each slider
+        //        MARK: set start position for each slider
         sliderRed.value = 0.0
         sliderBlue.value = 0.0
         sliderGreen.value = 0.0
