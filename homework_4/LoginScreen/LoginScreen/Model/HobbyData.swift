@@ -6,7 +6,7 @@
 //
 
 struct HobbyData{
-    var hobby = [String]()
+    var hobby = ["football","basketball","gaming","walking","reading"]
     
     }
 
