@@ -18,6 +18,7 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         randomImage()
+        button.layer.cornerRadius = 15
     }
     //не успел доделать логику, по которой при каждом новом открытии вкладки менялась картинка по соответсвию с кнопкой
     func randomImage() {

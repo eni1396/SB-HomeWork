@@ -128,6 +128,8 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTs-hI-SqM">
                                 <rect key="frame" x="242" y="128" width="88" height="64"/>
+                                <color key="backgroundColor" red="0.5253653573" green="0.40934128149999999" blue="0.72260845250000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.72260845250000005" green="0.16325603380000001" blue="0.29181494699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="randomHobby:" destination="GYp-tB-eal" eventType="touchUpInside" id="YEe-AN-4g9"/>
