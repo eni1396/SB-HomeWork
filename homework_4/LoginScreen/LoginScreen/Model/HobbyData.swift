@@ -6,6 +6,7 @@
 //
 
 struct HobbyData{
+    
     var hobby = ["football","basketball","gaming","walking","reading"]
     
     }

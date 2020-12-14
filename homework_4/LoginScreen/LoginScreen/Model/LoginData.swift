@@ -7,6 +7,10 @@
 
 
 struct LoginData {
-    private(set) var login: String
-    private(set) var password: String
+    private(set) var login = "Login"
+    private(set) var password = "Password"
+    var fullName: String {
+        "\(login) aka Nikita Entin"
+    }
 }
+

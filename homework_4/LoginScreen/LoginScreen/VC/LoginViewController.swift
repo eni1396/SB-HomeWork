@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    var user = LoginData(login: "Nik", password: "qwerty")
+    var user = LoginData()
     
     @IBOutlet weak var passMiss: UIButton!
     @IBOutlet weak var loginMiss: UIButton!
@@ -40,39 +40,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginMiss.layer.cornerRadius = 10
         
     }
+    func moveThroughVC() {
+        guard let tabVC = storyboard?.instantiateViewController(identifier: "tabVC") as? UITabBarController else { return }
+        tabVC.modalPresentationStyle = .fullScreen
+        present(tabVC, animated: true)
+    }
     
     
     /// действие при нажатии на кнопку ОК
     /// - Parameter sender: либо сама кнопка, либо клавиша с клавиатуры
     @IBAction func ok(_ sender: Any) {
         if login.text == user.login && password.text == user.password {
-            guard let newVC = storyboard?.instantiateViewController(identifier: "tabVC") as? UITabBarController else { return }
-            newVC.modalPresentationStyle = .fullScreen
-            present(newVC, animated: true)
+            moveThroughVC()
         } else {
             login.text = ""
             password.text = ""
-            
-            let alert = UIAlertController(title: "Ошибка", message: "Неверный Login или Password!", preferredStyle: .alert)
-            alert.addAction(.init(title: "OK", style: .cancel))
-            present(alert, animated: true)
+            addAlert(title: "Ошибка", message: "Неверный Login или Password!")
         }
     }
     
     @IBAction func forgotLogin(_ sender: Any) {
-        let alert = UIAlertController(title: "Ваш Login", message: "\(user.login)", preferredStyle: .alert)
-        alert.addAction(.init(title: "OK", style: .cancel))
-        present(alert, animated: true)
+        addAlert(title: "Забыли логин?", message: "Ваш логин \(user.login)")
     }
     
     @IBAction func forgotPass(_ sender: Any) {
-        let alert = UIAlertController(title: "Ваш Password", message: "\(user.password)", preferredStyle: .alert)
-        alert.addAction(.init(title: "OK", style: .cancel))
-        present(alert, animated: true)
+        addAlert(title: "Забыли пароль?", message: "Ваш пароль \(user.password)")
     }
     
 }
 extension LoginViewController {
+    
+    func addAlert(title: String?, message: String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
     
     //выполняется метод делегата, чтобы по нажатию на Return был переход на следующий TextField
     @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
