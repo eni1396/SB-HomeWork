@@ -39,6 +39,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         
         let textArray = [redText, blueText, greenText]
         for value in textArray {
+            value?.returnKeyType = .done
             value?.delegate = self
         }
         sliderToggle()
