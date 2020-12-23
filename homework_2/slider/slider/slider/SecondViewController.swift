@@ -46,7 +46,6 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         tapToHideKeyBoard()
     }
     
-    
     ///   Кнопка замена фона
     /// - Parameter sender: сама кнопка
     @IBAction func doneButton(_ sender: UIButton) {
